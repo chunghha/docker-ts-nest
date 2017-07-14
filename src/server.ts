@@ -1,11 +1,10 @@
-import {Express} from '@types/express';
-import * as express from 'express';
+import express = require('express');
 import * as logger from 'morgan';
-import {NestFactory} from 'nest.js';
+import {NestFactory} from '@nestjs/core';
 
 import {ApplicationModule} from './modules/app.module';
 
-const instance: Express = express();
+const instance = express();
 instance.use(logger('combined'));
 instance.use('/', (req, res) => {
   res.send('hello, world!');

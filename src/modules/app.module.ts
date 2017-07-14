@@ -1,4 +1,4 @@
-import {Module} from 'nest.js';
+import {Module} from '@nestjs/common';
 
 @Module({
   modules: [],
