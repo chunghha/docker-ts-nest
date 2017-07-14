@@ -3,16 +3,20 @@
     "module": "commonjs",
     "declaration": false,
     "noImplicitAny": false,
-    "noUnusedLocals": false,
     "removeComments": true,
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
+    "outDir": "./dist"
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }
