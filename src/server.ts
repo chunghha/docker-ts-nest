@@ -1,12 +1,11 @@
-import express = require('express');
-import logger = require('morgan');
-
+import bodyParser = require('body-parser');
 import {NestFactory} from '@nestjs/core';
-
 import {ApplicationModule} from './modules/app.module';
 
-const instance = express();
-instance.use(logger('combined'));
+async function bootstrap() {
+  const app = await NestFactory.create(ApplicationModule);
+  app.use(bodyParser.json());
+  await app.listen(3000);
+}
 
-const app = NestFactory.create(ApplicationModule, instance);
-app.listen(3000);
+bootstrap();
