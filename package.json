@@ -8,19 +8,19 @@
     "lint": "tslint src/**/*.ts{,x}"
   },
   "dependencies": {
-    "@nestjs/common": "^4.0.0",
-    "@nestjs/core": "^4.0.0",
-    "@nestjs/microservices": "^4.0.0",
-    "@nestjs/testing": "^4.0.0",
-    "@nestjs/websockets": "^4.0.0",
-    "body-parser": "^1.18.1",
+    "@nestjs/common": "^4.1.0",
+    "@nestjs/core": "^4.1.0",
+    "@nestjs/microservices": "^4.1.0",
+    "@nestjs/testing": "^4.1.0",
+    "@nestjs/websockets": "^4.1.0",
+    "body-parser": "^1.18.2",
     "reflect-metadata": "^0.1.10",
-    "rxjs": "^5.4.3"
+    "rxjs": "~5.4.3"
   },
   "devDependencies": {
-    "@types/node": "^8.0.26",
+    "@types/node": "^8.0.33",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
+    "typescript": "~2.5.3"
   }
 }
