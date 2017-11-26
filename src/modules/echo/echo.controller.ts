@@ -1,5 +1,7 @@
 import {Controller, Get, HttpStatus, Param, Response} from '@nestjs/common';
+import { ApiUseTags } from '@nestjs/swagger';
 
+@ApiUseTags('hello')
 @Controller('echo')
 export class EchoController {
   @Get('/:input')

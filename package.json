@@ -8,11 +8,12 @@
     "lint": "tslint src/**/*.ts{,x}"
   },
   "dependencies": {
-    "@nestjs/common": "^4.4.0",
-    "@nestjs/core": "^4.4.0",
-    "@nestjs/microservices": "^4.4.0",
-    "@nestjs/testing": "^4.4.0",
-    "@nestjs/websockets": "^4.4.0",
+    "@nestjs/common": "4.4.2",
+    "@nestjs/core": "^4.4.2",
+    "@nestjs/microservices": "^4.4.1",
+    "@nestjs/swagger": "^1.1.2",
+    "@nestjs/testing": "^4.4.1",
+    "@nestjs/websockets": "^4.4.1",
     "body-parser": "^1.18.2",
     "reflect-metadata": "^0.1.10",
     "rxjs": "~5.5.2"
