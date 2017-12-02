@@ -4,5 +4,4 @@ import {EchoController} from './echo.controller';
 @Module({
   controllers: [EchoController],
 })
-export class EchoModule {
-}
+export class EchoModule {}

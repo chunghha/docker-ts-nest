@@ -7,5 +7,4 @@ import {RootController} from './root.controller';
   modules: [EchoModule],
   controllers: [RootController],
 })
-export class ApplicationModule {
-}
+export class ApplicationModule {}
