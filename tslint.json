@@ -41,6 +41,7 @@
     "max-classes-per-file": [
       false
     ],
+    "trailing-comma": false,
     "variable-name": [
       false
     ],

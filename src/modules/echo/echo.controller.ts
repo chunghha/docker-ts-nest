@@ -1,17 +1,18 @@
 import {Controller, Get, HttpStatus, Param, Response} from '@nestjs/common';
-import {ApiUseTags} from '@nestjs/swagger';
+import {ApiOperation, ApiResponse, ApiUseTags} from '@nestjs/swagger';
 
 @ApiUseTags('hello') @Controller('echo')
 export class EchoController {
+  @ApiOperation({title: 'Echo input on request to response'})
+  @ApiResponse({status: 200, description: 'Successful response'})
   @Get('/:input')
-  echo(@Response() res, @Param('input') input) {
-    const message: MESSAGE = {
-      echo: input,
-    };
-    res.status(HttpStatus.OK).json(message);
+  echo(@Param('input') input: string): Message {
+    const message: Message = {echo: input};
+
+    return message;
   }
 }
 
-interface MESSAGE {
+interface Message {
   echo?: string;
 }
