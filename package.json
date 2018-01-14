@@ -15,20 +15,20 @@
     "posttest": "npm run check"
   },
   "dependencies": {
-    "@nestjs/common": "4.5.1",
-    "@nestjs/core": "^4.5.1",
-    "@nestjs/microservices": "^4.5.1",
+    "@nestjs/common": "4.5.9",
+    "@nestjs/core": "^4.5.10",
+    "@nestjs/microservices": "^4.5.8",
     "@nestjs/swagger": "^1.1.3",
-    "@nestjs/testing": "^4.5.1",
-    "@nestjs/websockets": "^4.5.1",
+    "@nestjs/testing": "^4.5.5",
+    "@nestjs/websockets": "^4.5.8",
     "reflect-metadata": "^0.1.10",
-    "rxjs": "~5.5.5"
+    "rxjs": "~5.5.6"
   },
   "devDependencies": {
-    "@types/node": "^8.5.1",
-    "gts": "^0.5.2",
-    "ts-node": "^4.0.2",
-    "tslint": "^5.8.0",
+    "@types/node": "^8.5.8",
+    "gts": "^0.5.3",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
     "typescript": "~2.6.2"
   }
 }
