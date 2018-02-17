@@ -1,10 +1,8 @@
-import {MiddlewaresConsumer, Module} from '@nestjs/common';
-
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
-import {IHelmetConfiguration} from 'helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
+import {MiddlewaresConsumer, Module} from '@nestjs/common';
+import {IHelmetConfiguration} from 'helmet';
 import {ResponseTimeOptions} from 'response-time';
-
 
 import {EchoController} from './echo.controller';
 
@@ -12,7 +10,6 @@ import {EchoController} from './echo.controller';
   controllers: [EchoController],
 })
 export class EchoModule {
-
   configure(consumer: MiddlewaresConsumer) {
     HelmetMiddleware.configure(this.getHelmetConfiguration());
     ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
@@ -22,16 +19,16 @@ export class EchoModule {
 
   private getHelmetConfiguration(): IHelmetConfiguration {
     const helmetConfiguration: IHelmetConfiguration = {
-      // default helmet configuration
-    }
+        // default helmet configuration
+    };
 
     return helmetConfiguration;
   }
 
   private getResponseTimeOptions(): ResponseTimeOptions {
     const responseTimeOptions: ResponseTimeOptions = {
-      // default response-time options
-    }
+        // default response-time options
+    };
 
     return responseTimeOptions;
   }
