@@ -1,35 +1,17 @@
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
 import {MiddlewaresConsumer, Module} from '@nestjs/common';
-import {IHelmetConfiguration} from 'helmet';
-import {ResponseTimeOptions} from 'response-time';
 
 import {EchoController} from './echo.controller';
+import {SharedModule} from '../shared/shared.module';
 
 @Module({
   controllers: [EchoController],
+  imports: [SharedModule],
 })
 export class EchoModule {
   configure(consumer: MiddlewaresConsumer) {
-    HelmetMiddleware.configure(this.getHelmetConfiguration());
-    ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
-    consumer.apply(HelmetMiddleware).forRoutes(EchoController);
-    consumer.apply(ResponseTimeMiddleware).forRoutes(EchoController);
-  }
-
-  private getHelmetConfiguration(): IHelmetConfiguration {
-    const helmetConfiguration: IHelmetConfiguration = {
-        // default helmet configuration
-    };
-
-    return helmetConfiguration;
-  }
-
-  private getResponseTimeOptions(): ResponseTimeOptions {
-    const responseTimeOptions: ResponseTimeOptions = {
-        // default response-time options
-    };
-
-    return responseTimeOptions;
+    consumer.apply(HelmetMiddleware).with('EchoModule').forRoutes(EchoController);
+    consumer.apply(ResponseTimeMiddleware).with('EchoModule').forRoutes(EchoController);
   }
 }
