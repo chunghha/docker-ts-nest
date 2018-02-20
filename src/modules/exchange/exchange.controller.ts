@@ -1,6 +1,6 @@
 import {Controller, Get, HttpStatus, Param, Res, Response} from '@nestjs/common';
+import {AxiosResponse} from '@nestjs/common/http/interfaces/axios.interfaces';
 import {ApiOperation, ApiResponse, ApiUseTags} from '@nestjs/swagger';
-import {fromPromise} from 'rxjs/observable/fromPromise';
 
 import {ExchangeService} from './exchange.service';
 
@@ -11,15 +11,16 @@ export class ExchangeController {
   @ApiOperation({title: 'Return Exchange Rate per request'})
   @ApiResponse({status: 200, description: 'Successful response'})
   @Get('/:from/:to')
-  rate(@Param('from') from: string, @Param('to') to: string, @Res() response) {
+  rate<T>(
+      @Param('from') from: string, @Param('to') to: string, @Res() response) {
     const rate: Rate = {
       from,
       to,
     };
 
-    fromPromise(this.exchangeService.getRate(from, to))
-        .subscribe((res: string) => {
-          rate.rate = res;
+    this.exchangeService.getRate(from, to).subscribe(
+        (res: AxiosResponse<Fixer>) => {
+          rate.rate = res.data.rates[to] as number;
 
           response.status(HttpStatus.OK).json(rate);
         });
@@ -29,5 +30,9 @@ export class ExchangeController {
 interface Rate {
   from?: string;
   to?: string;
-  rate?: string;
+  rate?: number;
+}
+
+interface Fixer {
+  rates: number[];
 }

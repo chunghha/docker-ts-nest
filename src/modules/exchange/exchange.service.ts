@@ -1,13 +1,14 @@
 import {Component} from '@nestjs/common';
+import {HttpService} from '@nestjs/common/http';
+import {AxiosResponse} from '@nestjs/common/http/interfaces/axios.interfaces';
 
-import * as axios from 'axios';
+import {Observable} from 'rxjs/Observable';
 
 @Component()
 export class ExchangeService {
-  async getRate(from: string, to: string): Promise<string> {
-    return await axios.default.get(`http://api.fixer.io/latest?base=${from}`)
-        .then((res) => {
-          return res.data.rates[to] as string;
-        });
+  constructor(private readonly httpService: HttpService) {}
+
+  getRate<T>(from: string, to: string): Observable<AxiosResponse<T>> {
+    return this.httpService.get(`http://api.fixer.io/latest?base=${from}`);
   }
 }

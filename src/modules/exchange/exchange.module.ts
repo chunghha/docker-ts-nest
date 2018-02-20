@@ -1,6 +1,7 @@
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
 import {MiddlewaresConsumer, Module} from '@nestjs/common';
+import {HttpModule} from '@nestjs/common/http';
 import {IHelmetConfiguration} from 'helmet';
 import {ResponseTimeOptions} from 'response-time';
 
@@ -10,7 +11,8 @@ import {ExchangeService} from './exchange.service';
 @Module({
   controllers: [ExchangeController],
   components: [ExchangeService],
-  exports: [ExchangeService]
+  exports: [ExchangeService],
+  imports: [HttpModule]
 })
 export class ExchangeModule {
   configure(consumer: MiddlewaresConsumer) {
