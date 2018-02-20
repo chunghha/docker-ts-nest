@@ -30,4 +30,9 @@ describe('App /', () => {
     return request(server).get('/echo/hello')
       .expect(200);
   });
+
+  it('should return 200 OK', () => {
+    return request(server).get('/rate/USD/EUR')
+      .expect(200);
+  });
 });
