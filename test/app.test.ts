@@ -35,4 +35,15 @@ describe('App /', () => {
     return request(server).get('/rate/USD/EUR')
       .expect(200);
   });
+
+  it('should return 200 OK with uppercase from/to', (done) => {
+    jest.setTimeout(10000);
+    return request(server).get('/rate/usd/eur')
+      .expect(200)
+      .end((err, res) => {
+        expect(res.body.from).toBe('USD');
+        expect(res.body.to).toBe('EUR');
+        done();
+      });
+  });
 });
