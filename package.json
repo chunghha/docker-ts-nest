@@ -19,17 +19,17 @@
   "dependencies": {
     "@nest-middlewares/helmet": "^1.1.1",
     "@nest-middlewares/response-time": "^1.1.1",
-    "@nestjs/common": "4.6.5",
-    "@nestjs/core": "^4.6.5",
-    "@nestjs/microservices": "^4.6.5",
+    "@nestjs/common": "4.6.6",
+    "@nestjs/core": "^4.6.6",
+    "@nestjs/microservices": "^4.6.6",
     "@nestjs/swagger": "^1.1.4",
-    "@nestjs/testing": "^4.6.1",
-    "@nestjs/websockets": "^4.6.5",
+    "@nestjs/testing": "^4.6.6",
+    "@nestjs/websockets": "^4.6.6",
     "bull": "^3.3.10",
     "dotenv": "^5.0.1",
     "nest-bull": "^0.2.2",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "~5.5.6"
+    "rxjs": "~5.5.7"
   },
   "devDependencies": {
     "@types/bull": "^3.3.7",
@@ -37,7 +37,7 @@
     "@types/node": "^8.9.5",
     "gts": "^0.5.4",
     "jest": "^22.4.2",
-    "nodemon": "^1.17.1",
+    "nodemon": "^1.17.2",
     "supertest": "^3.0.0",
     "ts-jest": "^22.4.1",
     "ts-node": "^5.0.1",
