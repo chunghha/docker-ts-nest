@@ -6,7 +6,7 @@ import {UpperCasePipe} from '../uppercase.pipe';
 
 import {ExchangeService} from './exchange.service';
 
-@ApiUseTags('hello') @Controller('rate')
+@ApiUseTags('hello') @Controller()
 export class ExchangeController {
   constructor(private exchangeService: ExchangeService) {}
 

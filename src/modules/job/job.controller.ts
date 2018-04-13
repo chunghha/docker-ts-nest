@@ -4,7 +4,7 @@ import {ApiOperation, ApiResponse, ApiUseTags} from '@nestjs/swagger';
 import {Job, Queue} from 'bull';
 import {InjectQueue} from 'nest-bull';
 
-@ApiUseTags('hello') @Controller('job')
+@ApiUseTags('hello') @Controller()
 export class JobController {
   constructor(
       @InjectQueue('store') readonly queue: Queue,
