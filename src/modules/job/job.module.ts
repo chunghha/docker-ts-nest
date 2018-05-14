@@ -1,6 +1,6 @@
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
-import {MiddlewaresConsumer, Module} from '@nestjs/common';
+import {MiddlewareConsumer, Module} from '@nestjs/common';
 
 import {DoneCallback, Job} from 'bull';
 import {BullModule} from 'nest-bull';
@@ -28,7 +28,7 @@ import {JobController} from './job.controller';
   ],
 })
 export class JobModule {
-  configure(consumer: MiddlewaresConsumer) {
+  configure(consumer: MiddlewareConsumer) {
     consumer.apply(HelmetMiddleware).with('JobModule').forRoutes(JobController);
     consumer.apply(ResponseTimeMiddleware)
         .with('JobModule')

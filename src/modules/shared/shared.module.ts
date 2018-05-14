@@ -1,6 +1,6 @@
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
-import {MiddlewaresConsumer, Module} from '@nestjs/common';
+import {MiddlewareConsumer, Module} from '@nestjs/common';
 import {IHelmetConfiguration} from 'helmet';
 import {ResponseTimeOptions} from 'response-time';
 
@@ -8,7 +8,7 @@ import {ResponseTimeOptions} from 'response-time';
   exports: [SharedModule],
 })
 export class SharedModule {
-  configure(consumer: MiddlewaresConsumer) {
+  configure(consumer: MiddlewareConsumer) {
     HelmetMiddleware.configure(this.getHelmetConfiguration());
     ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
   }

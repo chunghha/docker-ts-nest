@@ -1,6 +1,6 @@
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
-import {MiddlewaresConsumer, Module} from '@nestjs/common';
+import {MiddlewareConsumer, Module} from '@nestjs/common';
 
 import {SharedModule} from '../shared/shared.module';
 
@@ -11,7 +11,7 @@ import {EchoController} from './echo.controller';
   imports: [SharedModule],
 })
 export class EchoModule {
-  configure(consumer: MiddlewaresConsumer) {
+  configure(consumer: MiddlewareConsumer) {
     consumer.apply(HelmetMiddleware)
         .with('EchoModule')
         .forRoutes(EchoController);
