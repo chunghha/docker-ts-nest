@@ -27,7 +27,7 @@ export class ExchangeController {
         (res: AxiosResponse<Fixer>) => {
           rate.rate = res.data.rates[to] as number;
 
-          response.status(HttpStatus.OK).json(rate);
+          response.send(JSON.stringify(rate));
         });
   }
 }

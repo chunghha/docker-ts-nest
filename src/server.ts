@@ -1,10 +1,10 @@
-import {NestFactory} from '@nestjs/core';
+import {NestFactory, FastifyAdapter} from '@nestjs/core';
 import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
 
 import {ApplicationModule} from './modules/app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(ApplicationModule);
+  const app = await NestFactory.create(ApplicationModule, new FastifyAdapter());
 
   const options = new DocumentBuilder()
                       .setTitle('Hello example')
