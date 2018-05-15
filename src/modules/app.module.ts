@@ -9,7 +9,7 @@ import {RootController} from './root.controller';
 import {routes} from './routes';
 
 @Module({
-  modules: [RouterModule.forRoutes(routes), EchoModule, ExchangeModule, JobModule],
+  imports: [RouterModule.forRoutes(routes), EchoModule, ExchangeModule, JobModule],
   controllers: [RootController],
 })
 export class ApplicationModule {}
