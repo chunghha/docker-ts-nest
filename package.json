@@ -1,6 +1,7 @@
 {
   "name": "docker-ts-nest",
   "version": "0.2.0",
+  "license": "MIT",
   "scripts": {
     "start": "ts-node src/server.ts",
     "prestart:prod": "tsc",
@@ -17,36 +18,36 @@
     "test": "jest --forceExit --coverage --verbose"
   },
   "dependencies": {
-    "@nest-middlewares/helmet": "^1.1.1",
-    "@nest-middlewares/response-time": "^1.1.1",
-    "@nestjs/common": "5.0.0",
-    "@nestjs/core": "^5.0.0",
-    "@nestjs/microservices": "^5.0.0",
-    "@nestjs/swagger": "^2.0.0",
-    "@nestjs/testing": "^5.0.0",
-    "@nestjs/websockets": "^5.0.0",
+    "@nest-middlewares/helmet": "^5.0.0",
+    "@nest-middlewares/response-time": "^5.0.0",
+    "@nestjs/common": "5.0.1",
+    "@nestjs/core": "^5.0.1",
+    "@nestjs/microservices": "^5.0.1",
+    "@nestjs/swagger": "^2.0.2",
+    "@nestjs/testing": "^5.0.1",
+    "@nestjs/websockets": "^5.0.1",
     "bull": "^3.4.2",
-    "dotenv": "^5.0.1",
-    "fastify": "^1.4.0",
+    "dotenv": "^6.0.0",
+    "fastify": "^1.6.0",
     "fastify-formbody": "^2.0.0",
     "nest-bull": "^0.2.2",
     "nest-router": "^1.0.5",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "~6.1.0",
-    "rxjs-compat": "~6.1.0"
+    "rxjs": "~6.2.1",
+    "rxjs-compat": "~6.2.1"
   },
   "devDependencies": {
-    "@types/bull": "^3.3.10",
-    "@types/jest": "^22.2.3",
-    "@types/node": "^8.10.15",
-    "gts": "^0.6.0",
-    "jest": "^22.4.3",
-    "nodemon": "^1.17.4",
-    "rxjs-tslint": "^0.1.3",
+    "@types/bull": "^3.3.12",
+    "@types/jest": "^23.1.1",
+    "@types/node": "^8.10.10",
+    "gts": "^0.7.1",
+    "jest": "^23.1.0",
+    "nodemon": "^1.17.5",
+    "rxjs-tslint": "^0.1.4",
     "supertest": "^3.1.0",
     "ts-jest": "^22.4.6",
-    "ts-node": "^6.0.3",
+    "ts-node": "^6.1.1",
     "tslint": "^5.10.0",
-    "typescript": "~2.8.3"
+    "typescript": "~2.9.2"
   }
 }
