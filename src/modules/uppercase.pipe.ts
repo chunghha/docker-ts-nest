@@ -1,7 +1,7 @@
 
-import {ArgumentMetadata, BadRequestException, HttpStatus, Pipe, PipeTransform} from '@nestjs/common';
+import {ArgumentMetadata, BadRequestException, PipeTransform, Injectable} from '@nestjs/common';
 
-@Pipe()
+@Injectable()
 export class UpperCasePipe implements PipeTransform<string> {
   async transform(value: string, metadata: ArgumentMetadata) {
     if (!value) return value;
