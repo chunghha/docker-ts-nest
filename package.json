@@ -20,34 +20,35 @@
   "dependencies": {
     "@nest-middlewares/helmet": "~5.1.0",
     "@nest-middlewares/response-time": "~5.1.0",
-    "@nestjs/common": "~5.2.1",
-    "@nestjs/core": "~5.2.1",
-    "@nestjs/microservices": "~5.2.1",
-    "@nestjs/swagger": "~2.4.4",
-    "@nestjs/testing": "~5.2.1",
-    "@nestjs/websockets": "~5.2.1",
+    "@nestjs/common": "~5.3.0",
+    "@nestjs/core": "~5.3.0",
+    "@nestjs/microservices": "~5.3.0",
+    "@nestjs/swagger": "~2.4.6",
+    "@nestjs/testing": "~5.3.0",
+    "@nestjs/websockets": "~5.3.0",
     "bull": "^3.4.7",
     "dotenv": "^6.0.0",
-    "fastify": "^1.10.0",
+    "fastify": "^1.11.1",
     "fastify-formbody": "^2.0.1",
-    "nest-bull": "^0.2.2",
+    "fastify-swagger": "^0.15.0",
+    "nest-bull": "^0.2.4",
     "nest-router": "^1.0.6",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "~6.2.2",
-    "rxjs-compat": "~6.2.2"
+    "rxjs": "~6.3.1",
+    "rxjs-compat": "~6.3.1"
   },
   "devDependencies": {
     "@types/bull": "^3.3.20",
     "@types/jest": "^23.3.1",
-    "@types/node": "~10.7.1",
+    "@types/node": "~10.9.4",
     "gts": "^0.8.0",
     "jest": "^23.5.0",
-    "nodemon": "^1.18.3",
+    "nodemon": "^1.18.4",
     "rxjs-tslint": "^0.1.5",
     "supertest": "^3.1.0",
     "ts-jest": "^23.1.4",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "~3.0.1"
+    "typescript": "~3.0.3"
   }
 }
