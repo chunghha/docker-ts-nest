@@ -9,6 +9,6 @@ export class ExchangeService {
   constructor(private readonly httpService: HttpService) {}
 
   getRate<T>(from: string, to: string): Observable<AxiosResponse<T>> {
-    return this.httpService.get(`http://api.fixer.io/latest?base=${from}`);
+    return this.httpService.get(`https://api.exchangeratesapi.io/latest?base=${from}`);
   }
 }
