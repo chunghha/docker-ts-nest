@@ -1,6 +1,6 @@
 import {Injectable} from '@nestjs/common';
 import {HttpService} from '@nestjs/common/http';
-import {AxiosResponse} from '@nestjs/common/http/interfaces/axios.interfaces';
+import {AxiosResponse} from '@nestjs/common/node_modules/axios';
 
 import {Observable} from 'rxjs';
 
