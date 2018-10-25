@@ -6,7 +6,7 @@ export class EchoController {
   @ApiOperation({title: 'Echo input on request to response'})
   @ApiResponse({status: 200, description: 'Successful response'})
   @Get('/:input')
-  echo(@Param('input') input: string): Message {
+  public echo(@Param('input') input: string): Message {
     const message: Message = {echo: input};
 
     return message;

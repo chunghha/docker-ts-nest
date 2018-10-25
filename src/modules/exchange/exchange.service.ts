@@ -1,6 +1,5 @@
-import {Injectable} from '@nestjs/common';
-import {HttpService} from '@nestjs/common/http';
-import {AxiosResponse} from '@nestjs/common/node_modules/axios';
+import {HttpService, Injectable} from '@nestjs/common';
+import {AxiosResponse} from 'axios';
 
 import {Observable} from 'rxjs';
 
@@ -8,7 +7,7 @@ import {Observable} from 'rxjs';
 export class ExchangeService {
   constructor(private readonly httpService: HttpService) {}
 
-  getRate<T>(from: string, to: string): Observable<AxiosResponse<T>> {
+  public getRate<T>(from: string, to: string): Observable<AxiosResponse<T>> {
     return this.httpService.get(`https://api.exchangeratesapi.io/latest?base=${from}`);
   }
 }

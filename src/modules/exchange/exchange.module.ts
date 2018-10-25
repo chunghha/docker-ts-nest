@@ -1,7 +1,6 @@
 import {HelmetMiddleware} from '@nest-middlewares/helmet';
 import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
-import {MiddlewareConsumer, Module} from '@nestjs/common';
-import {HttpModule} from '@nestjs/common/http';
+import {HttpModule, MiddlewareConsumer, Module} from '@nestjs/common';
 
 import {SharedModule} from '../shared/shared.module';
 
@@ -10,11 +9,11 @@ import {ExchangeService} from './exchange.service';
 
 @Module({
   controllers: [ExchangeController],
+  imports: [HttpModule, SharedModule],
   providers: [ExchangeService],
-  imports: [HttpModule, SharedModule]
 })
 export class ExchangeModule {
-  configure(consumer: MiddlewareConsumer) {
+  public configure(consumer: MiddlewareConsumer) {
     consumer.apply(HelmetMiddleware)
         .with('ExchangeModule')
         .forRoutes(ExchangeController);

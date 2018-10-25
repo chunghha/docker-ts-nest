@@ -1,6 +1,6 @@
 import {Controller, Get, HttpStatus, Param, Res, Response} from '@nestjs/common';
-import {AxiosResponse} from '@nestjs/common/http/interfaces/axios.interfaces';
 import {ApiImplicitParam, ApiOperation, ApiResponse, ApiUseTags} from '@nestjs/swagger';
+import {AxiosResponse} from 'axios';
 
 import {UpperCasePipe} from '../uppercase.pipe';
 
@@ -15,7 +15,7 @@ export class ExchangeController {
   @ApiImplicitParam({name: 'from', required: true, type: String})
   @ApiImplicitParam({name: 'to', required: true, type: String})
   @Get('/:from/:to')
-  rate<T>(
+  public rate<T>(
       @Param('from', new UpperCasePipe()) from: string,
       @Param('to', new UpperCasePipe()) to: string, @Res() response) {
     const rate: Rate = {

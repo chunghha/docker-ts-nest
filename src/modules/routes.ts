@@ -6,15 +6,15 @@ import { JobModule } from './job/job.module';
 
 export const routes: Routes = [
   {
+    module: EchoModule,
     path: '/echo',
-    module: EchoModule
   },
   {
+    module: ExchangeModule,
     path: '/rate',
-    module: ExchangeModule
   },
   {
+    module: JobModule,
     path: 'job',
-    module: JobModule
   }
 ];

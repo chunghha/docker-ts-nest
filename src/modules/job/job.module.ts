@@ -20,7 +20,7 @@ import {JobController} from './job.controller';
       },
       processors: [
         (job: Job, done: DoneCallback) => {
-          done(null, job.data);
+          done(undefined, job.data);
         },
       ],
     }),
@@ -28,7 +28,7 @@ import {JobController} from './job.controller';
   ],
 })
 export class JobModule {
-  configure(consumer: MiddlewareConsumer) {
+  public configure(consumer: MiddlewareConsumer) {
     consumer.apply(HelmetMiddleware).with('JobModule').forRoutes(JobController);
     consumer.apply(ResponseTimeMiddleware)
         .with('JobModule')

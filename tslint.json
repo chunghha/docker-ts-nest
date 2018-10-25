@@ -1,56 +1,23 @@
 {
-  "defaultSeverity": "error",
   "extends": [
-    "tslint:recommended"
+      "tslint:latest",
+      "tslint-config-prettier"
   ],
-  "jsRules": {
-    "no-unused-expression": true
-  },
+  "plugins": [
+      "tslint-plugin-prettier"
+  ],
+  "rulesDirectory": [
+      "tslint-plugin-prettier"
+  ],
   "rules": {
-    "eofline": false,
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "ordered-imports": [
-      false
-    ],
-    "max-line-length": [
-      true,
-      140
-    ],
-    "member-access": [
-      true,
-      "no-public"
-    ],
-    "member-ordering": [
-      false
-    ],
-    "curly": false,
-    "interface-name": [
-      false
-    ],
-    "array-type": [
-      false
-    ],
-    "no-empty-interface": false,
-    "no-empty": false,
-    "arrow-parens": false,
-    "object-literal-sort-keys": false,
-    "no-unused-expression": false,
-    "max-classes-per-file": [
-      false
-    ],
-    "trailing-comma": false,
-    "variable-name": [
-      false
-    ],
-    "one-line": [
-      false
-    ],
-    "one-variable-per-declaration": [
-      false
-    ]
-  },
-  "rulesDirectory": []
+      "class-name": true,
+      "no-var-keyword": true,
+      "no-internal-module": true,
+      "no-null-keyword": true,
+      "prefer-const": true,
+      "interface-name": [true, "never-prefix"],
+      "jsdoc-format": true,
+      "no-console": [false, "log"],
+      "no-any": false
+  }
 }

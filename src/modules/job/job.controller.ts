@@ -13,7 +13,7 @@ export class JobController {
   @ApiOperation({title: 'Add job to queue'})
   @ApiResponse({status: 200, description: 'Successful response'})
   @Post('/add')
-  async addJob<T>(@Body() value: T) {
+  public async addJob<T>(@Body() value: T) {
     const job: Job = await this.queue.add(value);
     return job.id;
   }
@@ -21,7 +21,7 @@ export class JobController {
   @ApiOperation({title: 'Return job per id requested'})
   @ApiResponse({status: 200, description: 'Successful response'})
   @Get('/get/:id')
-  async getJob(@Param('id') id: string) {
-    return await this.queue.getJob(id);
+  public async getJob(@Param('id') id: string) {
+    return this.queue.getJob(id);
   }
 }

@@ -8,7 +8,7 @@ import {ResponseTimeOptions} from 'response-time';
   exports: [SharedModule],
 })
 export class SharedModule {
-  configure(consumer: MiddlewareConsumer) {
+  public configure(consumer: MiddlewareConsumer) {
     HelmetMiddleware.configure(this.getHelmetConfiguration());
     ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
   }

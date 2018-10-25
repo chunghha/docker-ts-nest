@@ -11,7 +11,7 @@ import {EchoController} from './echo.controller';
   imports: [SharedModule],
 })
 export class EchoModule {
-  configure(consumer: MiddlewareConsumer) {
+  public configure(consumer: MiddlewareConsumer) {
     consumer.apply(HelmetMiddleware)
         .with('EchoModule')
         .forRoutes(EchoController);

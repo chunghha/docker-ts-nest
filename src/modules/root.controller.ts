@@ -6,7 +6,7 @@ export class RootController {
   @ApiOperation({title: 'Respond Hello World'})
   @ApiResponse({status: 200, description: 'Successfully response'})
   @Get('/')
-  greet(@Response() res) {
+  public greet(@Response() res) {
     res.status(HttpStatus.OK).send('Hello, World');
   }
 }
