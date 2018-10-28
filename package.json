@@ -11,7 +11,7 @@
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run check",
+    "posttest": "npm run tslint:check",
     "test": "jest --forceExit --coverage --verbose",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "tslint:check": "npx tslint-config-prettier-check ./tslint.json"
@@ -28,6 +28,7 @@
     "axios": "^0.18.0",
     "bull": "^3.4.8",
     "dotenv": "^6.1.0",
+    "express": "^4.16.4",
     "fastify": "^1.12.1",
     "fastify-formbody": "^2.0.1",
     "fastify-swagger": "^0.15.1",
@@ -37,17 +38,17 @@
     "reflect-metadata": "^0.1.12",
     "response-time": "^2.3.2",
     "rxjs": "~6.3.3",
-    "rxjs-compat": "~6.3.3"
+    "rxjs-compat": "~6.3.3",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {
     "@types/bull": "^3.4.0",
     "@types/jest": "^23.3.7",
     "@types/node": "~10.12.0",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.5",
     "prettier": "^1.14.3",
     "rxjs-tslint": "^0.1.5",
-    "supertest": "^3.3.0",
     "ts-jest": "^23.10.4",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",

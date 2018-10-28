@@ -5,6 +5,7 @@ import {AxiosResponse} from 'axios';
 import {UpperCasePipe} from '../uppercase.pipe';
 
 import {ExchangeService} from './exchange.service';
+import {Rate} from './rate.model';
 
 @ApiUseTags('hello') @Controller()
 export class ExchangeController {
@@ -30,12 +31,6 @@ export class ExchangeController {
           response.send(JSON.stringify(rate));
         });
   }
-}
-
-interface Rate {
-  from?: string;
-  to?: string;
-  rate?: number;
 }
 
 interface Fixer {
