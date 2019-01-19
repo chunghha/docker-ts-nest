@@ -16,7 +16,9 @@
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "tslint:check": "npx tslint-config-prettier-check ./tslint.json",
     "doc": "npx compodoc --theme material -p ./tsconfig.json",
-    "doc:serve": "npx compodoc -s"
+    "doc:serve": "npx compodoc -s",
+    "todo": "npx leasot 'src/**/*.ts'",
+    "todo-ci": "npx leasot -x --reporter markdown 'src/**/*.ts' > TODO.md"
   },
   "dependencies": {
     "@nest-middlewares/helmet": "~5.1.1",
@@ -32,7 +34,7 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "fastify": "^1.13.4",
-    "fastify-formbody": "^2.0.3",
+    "fastify-formbody": "^2.1.0",
     "fastify-swagger": "^1.0.0",
     "helmet": "^3.15.0",
     "nest-bull": "^0.2.5",
@@ -45,10 +47,11 @@
   },
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.7",
-    "@types/bull": "^3.5.1",
-    "@types/jest": "^23.3.12",
+    "@types/bull": "^3.5.3",
+    "@types/jest": "^23.3.13",
     "@types/node": "~10.12.18",
     "jest": "^23.6.0",
+    "leasot": "^7.1.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.15.3",
     "ts-jest": "^23.10.5",
@@ -56,6 +59,6 @@
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.17.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "~3.2.2"
+    "typescript": "~3.2.4"
   }
 }
