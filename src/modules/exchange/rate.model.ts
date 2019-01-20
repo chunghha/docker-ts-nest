@@ -1,5 +1,5 @@
 export interface Rate {
-  from?: string;
-  to?: string;
-  rate?: number;
+	from?: string;
+	to?: string;
+	rate?: number;
 }

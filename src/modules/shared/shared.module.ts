@@ -1,31 +1,31 @@
-import {HelmetMiddleware} from '@nest-middlewares/helmet';
-import {ResponseTimeMiddleware} from '@nest-middlewares/response-time';
-import {MiddlewareConsumer, Module} from '@nestjs/common';
-import {IHelmetConfiguration} from 'helmet';
-import {ResponseTimeOptions} from 'response-time';
+import { HelmetMiddleware } from '@nest-middlewares/helmet';
+import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
+import { IHelmetConfiguration } from 'helmet';
+import { ResponseTimeOptions } from 'response-time';
 
 @Module({
-  exports: [SharedModule],
+	exports: [SharedModule]
 })
 export class SharedModule {
-  public configure(consumer: MiddlewareConsumer) {
-    HelmetMiddleware.configure(this.getHelmetConfiguration());
-    ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
-  }
+	public configure(consumer: MiddlewareConsumer) {
+		HelmetMiddleware.configure(this.getHelmetConfiguration());
+		ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
+	}
 
-  private getHelmetConfiguration(): IHelmetConfiguration {
-    const helmetConfiguration: IHelmetConfiguration = {
-        // default helmet configuration
-    };
+	private getHelmetConfiguration(): IHelmetConfiguration {
+		const helmetConfiguration: IHelmetConfiguration = {
+			// default helmet configuration
+		};
 
-    return helmetConfiguration;
-  }
+		return helmetConfiguration;
+	}
 
-  private getResponseTimeOptions(): ResponseTimeOptions {
-    const responseTimeOptions: ResponseTimeOptions = {
-        // default response-time options
-    };
+	private getResponseTimeOptions(): ResponseTimeOptions {
+		const responseTimeOptions: ResponseTimeOptions = {
+			// default response-time options
+		};
 
-    return responseTimeOptions;
-  }
+		return responseTimeOptions;
+	}
 }
