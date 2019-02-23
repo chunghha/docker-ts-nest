@@ -1,12 +1,16 @@
-FROM node:latest
+ARG NODE_VERSION=10
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+FROM node:${NODE_VERSION}-alpine AS builder
 
-COPY package.json /usr/src/app/
+RUN mkdir -p /api
+WORKDIR /api
+
+COPY package.json .
 RUN npm install
 
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 3000
-CMD ["npm", "run", "start:prod"]
+
+ENTRYPOINT [ "npm" ]
+CMD ["run", "start:prod"]

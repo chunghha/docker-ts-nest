@@ -15,6 +15,7 @@ import { JobController } from './job.controller';
 			name: 'store',
 			options: {
 				redis: {
+          // host: 'redis',
 					port: 6379
 				}
 			},

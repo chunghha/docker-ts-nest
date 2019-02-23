@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - "3000:3000"
+    networks:
+     - docker-ts-nest-net
+    volumes:
+     - .:/api
+     - /api/node_modules
+    depends_on:
+     - redis
+  redis:
+    image: redis:alpine
+    networks:
+     - docker-ts-nest-net
+
+networks:
+  docker-ts-nest-net:
+    driver: bridge
