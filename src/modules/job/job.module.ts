@@ -31,12 +31,7 @@ import { JobController } from './job.controller';
 export class JobModule {
 	public configure(consumer: MiddlewareConsumer) {
 		consumer
-			.apply(HelmetMiddleware)
-			.with('JobModule')
-			.forRoutes(JobController);
-		consumer
-			.apply(ResponseTimeMiddleware)
-			.with('JobModule')
+			.apply(HelmetMiddleware, ResponseTimeMiddleware)
 			.forRoutes(JobController);
 	}
 }

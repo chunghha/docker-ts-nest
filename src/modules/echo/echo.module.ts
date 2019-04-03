@@ -13,12 +13,7 @@ import { EchoController } from './echo.controller';
 export class EchoModule {
 	public configure(consumer: MiddlewareConsumer) {
 		consumer
-			.apply(HelmetMiddleware)
-			.with('EchoModule')
-			.forRoutes(EchoController);
-		consumer
-			.apply(ResponseTimeMiddleware)
-			.with('EchoModule')
+			.apply(HelmetMiddleware, ResponseTimeMiddleware)
 			.forRoutes(EchoController);
 	}
 }

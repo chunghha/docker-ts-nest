@@ -15,12 +15,7 @@ import { ExchangeService } from './exchange.service';
 export class ExchangeModule {
 	public configure(consumer: MiddlewareConsumer) {
 		consumer
-			.apply(HelmetMiddleware)
-			.with('ExchangeModule')
-			.forRoutes(ExchangeController);
-		consumer
-			.apply(ResponseTimeMiddleware)
-			.with('ExchangeModule')
+			.apply(HelmetMiddleware, ResponseTimeMiddleware)
 			.forRoutes(ExchangeController);
 	}
 }
