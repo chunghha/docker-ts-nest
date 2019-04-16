@@ -1,9 +1,10 @@
-import { HelmetMiddleware } from '@nest-middlewares/helmet';
-import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
 import { HttpModule, MiddlewareConsumer, Module } from '@nestjs/common';
 
-import { SharedModule } from '../shared/shared.module';
+import { CorsMiddleware } from '@nest-middlewares/cors';
+import { HelmetMiddleware } from '@nest-middlewares/helmet';
+import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
 
+import { SharedModule } from '../shared/shared.module';
 import { ExchangeController } from './exchange.controller';
 import { ExchangeService } from './exchange.service';
 
@@ -15,7 +16,7 @@ import { ExchangeService } from './exchange.service';
 export class ExchangeModule {
 	public configure(consumer: MiddlewareConsumer) {
 		consumer
-			.apply(HelmetMiddleware, ResponseTimeMiddleware)
-			.forRoutes(ExchangeController);
+			.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware)
+			.forRoutes('rate');
 	}
 }

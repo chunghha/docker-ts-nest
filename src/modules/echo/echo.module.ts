@@ -1,9 +1,10 @@
-import { HelmetMiddleware } from '@nest-middlewares/helmet';
-import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 
-import { SharedModule } from '../shared/shared.module';
+import { CorsMiddleware } from '@nest-middlewares/cors';
+import { HelmetMiddleware } from '@nest-middlewares/helmet';
+import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
 
+import { SharedModule } from '../shared/shared.module';
 import { EchoController } from './echo.controller';
 
 @Module({
@@ -13,7 +14,7 @@ import { EchoController } from './echo.controller';
 export class EchoModule {
 	public configure(consumer: MiddlewareConsumer) {
 		consumer
-			.apply(HelmetMiddleware, ResponseTimeMiddleware)
+			.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware)
 			.forRoutes(EchoController);
 	}
 }
