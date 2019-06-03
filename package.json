@@ -31,8 +31,8 @@
     "@nestjs/swagger": "~3.0.2",
     "@nestjs/testing": "~6.2.4",
     "@nestjs/websockets": "~6.2.4",
-    "axios": "^0.18.0",
-    "bull": "^3.9.1",
+    "axios": "~0.18.1",
+    "bull": "^3.10.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "helmet": "^3.18.0",
@@ -42,22 +42,22 @@
     "response-time": "^2.3.2",
     "rxjs": "~6.5.2",
     "supertest": "^4.0.2",
-    "swagger-ui-express": "^4.0.4"
+    "swagger-ui-express": "^4.0.5"
   },
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.9",
     "@types/bull": "^3.5.14",
     "@types/jest": "^24.0.13",
-    "@types/node": "~12.0.2",
+    "@types/node": "~12.0.4",
     "jest": "^24.8.0",
     "leasot": "^7.3.4",
     "nodemon": "^1.19.1",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "~3.4.5"
+    "typescript": "~3.5.1"
   }
 }
