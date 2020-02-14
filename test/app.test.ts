@@ -1,21 +1,17 @@
-import { FastifyAdapter } from '@nestjs/core';
 import { Test } from '@nestjs/testing';
 
 import { ApplicationModule } from '../src/modules/app.module';
-import { Rate } from '../src/modules/exchange/rate.model';
-import { PayloadTooLargeException } from '@nestjs/common';
 
 describe('App /', () => {
   let app;
 
   beforeAll(async () => {
-    const fastifyAdapter = new FastifyAdapter();
     const module = await Test.createTestingModule({
       imports: [ApplicationModule],
     })
       .compile();
 
-    app = module.createNestApplication(fastifyAdapter);
+    app = module.createNestApplication();
     await app.init();
   });
 

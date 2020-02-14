@@ -9,6 +9,8 @@ import { BullModule } from 'nest-bull';
 import { SharedModule } from '../shared/shared.module';
 import { JobController } from './job.controller';
 
+const REDIS_PORT = +process.env.REDIS_PORT || 6379;
+
 @Module({
 	controllers: [JobController],
 	imports: [
@@ -16,8 +18,8 @@ import { JobController } from './job.controller';
 			name: 'store',
 			options: {
 				redis: {
-          // host: 'redis',
-					port: 6379
+          host: 'redis',
+					port: REDIS_PORT
 				}
 			},
 			processors: [
@@ -31,8 +33,6 @@ import { JobController } from './job.controller';
 })
 export class JobModule {
 	public configure(consumer: MiddlewareConsumer) {
-		consumer
-			.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware)
-			.forRoutes('job');
+		consumer.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware).forRoutes('job');
 	}
 }

@@ -1,5 +1,5 @@
-import { Controller, Get, HttpStatus, Param, Res, Response } from '@nestjs/common';
-import { ApiImplicitParam, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { Controller, Get, Param, Res } from '@nestjs/common';
+import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AxiosResponse } from 'axios';
 
 import { UpperCasePipe } from '../uppercase.pipe';
@@ -7,15 +7,15 @@ import { UpperCasePipe } from '../uppercase.pipe';
 import { ExchangeService } from './exchange.service';
 import { Rate } from './rate.model';
 
-@ApiUseTags('hello')
+@ApiTags('hello')
 @Controller()
 export class ExchangeController {
 	constructor(private exchangeService: ExchangeService) {}
 
-	@ApiOperation({ title: 'Return Exchange Rate per request' })
+	@ApiOperation({ summary: 'Return Exchange Rate per request' })
 	@ApiResponse({ status: 200, description: 'Successful response' })
-	@ApiImplicitParam({ name: 'from', required: true, type: String })
-	@ApiImplicitParam({ name: 'to', required: true, type: String })
+	@ApiParam({ name: 'from', required: true, type: String })
+	@ApiParam({ name: 'to', required: true, type: String })
 	@Get('/:from/:to')
 	public rate<T>(
 		@Param('from', new UpperCasePipe()) from: string,

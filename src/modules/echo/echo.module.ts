@@ -13,8 +13,6 @@ import { EchoController } from './echo.controller';
 })
 export class EchoModule {
 	public configure(consumer: MiddlewareConsumer) {
-		consumer
-			.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware)
-			.forRoutes(EchoController);
+		consumer.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware).forRoutes(EchoController);
 	}
 }

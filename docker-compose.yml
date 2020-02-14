@@ -5,8 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+     - API_PORT
     ports:
-     - "3000:3000"
+     - $API_PORT:$API_PORT
     networks:
      - docker-ts-nest-net
     volumes:
@@ -15,7 +17,11 @@ services:
     depends_on:
      - redis
   redis:
+    environment:
+      - REDIS_PORT
     image: redis:alpine
+    expose:
+      - $REDIS_PORT
     networks:
      - docker-ts-nest-net
 

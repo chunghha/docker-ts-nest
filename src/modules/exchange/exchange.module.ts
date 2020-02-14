@@ -15,8 +15,6 @@ import { ExchangeService } from './exchange.service';
 })
 export class ExchangeModule {
 	public configure(consumer: MiddlewareConsumer) {
-		consumer
-			.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware)
-			.forRoutes('rate');
+		consumer.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware).forRoutes('rate');
 	}
 }
