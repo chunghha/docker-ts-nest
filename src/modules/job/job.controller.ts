@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { InjectQueue } from '@nestjs/bull';
 
 import { Job, Queue } from 'bull';
-import { InjectQueue } from 'nest-bull';
 
 @ApiTags('hello')
 @Controller()

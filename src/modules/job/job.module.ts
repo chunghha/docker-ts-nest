@@ -1,35 +1,34 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
+import { BullModule, BullModuleOptions } from '@nestjs/bull';
 
 import { CorsMiddleware } from '@nest-middlewares/cors';
 import { HelmetMiddleware } from '@nest-middlewares/helmet';
 import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
 import { DoneCallback, Job } from 'bull';
-import { BullModule } from 'nest-bull';
 
 import { SharedModule } from '../shared/shared.module';
 import { JobController } from './job.controller';
 
 const REDIS_PORT = +process.env.REDIS_PORT || 6379;
+const BullQueueModule = BullModule.registerQueueAsync({
+	name: 'store',
+	inject: [],
+	useFactory: async (): Promise<BullModuleOptions> => ({
+		redis: {
+			host: 'redis',
+			port: REDIS_PORT
+		},
+		processors: [
+			(job: Job, done: DoneCallback) => {
+				done(undefined, job.data);
+			}
+		]
+	})
+});
 
 @Module({
 	controllers: [JobController],
-	imports: [
-		BullModule.forRoot({
-			name: 'store',
-			options: {
-				redis: {
-          host: 'redis',
-					port: REDIS_PORT
-				}
-			},
-			processors: [
-				(job: Job, done: DoneCallback) => {
-					done(undefined, job.data);
-				}
-			]
-		}),
-		SharedModule
-	]
+	imports: [BullQueueModule, SharedModule]
 })
 export class JobModule {
 	public configure(consumer: MiddlewareConsumer) {

@@ -15,6 +15,6 @@ export const routes: Routes = [
 	},
 	{
 		module: JobModule,
-		path: 'job'
+		path: '/job'
 	}
 ];
