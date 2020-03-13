@@ -52,6 +52,7 @@ describe('App /', () => {
       method: 'GET',
       url: '/rate/usd/eur'
     }).then(({ payload }) => {
+      /* eslint-disable-next-line no-console */
       console.log(payload);
       expect(payload).toContain('USD');
       expect(payload).toContain('EUR');
