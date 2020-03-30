@@ -4,6 +4,10 @@ FROM keymetrics/pm2:${NODE_VERSION}-alpine
 # set api port from env var
 ENV API_PORT $API_PORT
 
+# defaults to local, compose overrides this to either dev, qa or prod
+ARG NODE_ENV=local
+ENV NODE_ENV $NODE_ENV
+
 # Create own api folder
 RUN mkdir -p /api
 WORKDIR /api
@@ -25,6 +29,6 @@ RUN yarn build
 EXPOSE $API_PORT
 
 # Run the API with pm2
+RUN echo ${NODE_ENV} > node_env
 COPY ecosystem.config.js .
-ENTRYPOINT [ "pm2-runtime" ]
-CMD [ "start", "ecosystem.config.js" ]
+ENTRYPOINT [ "pm2-runtime", "start", "ecosystem.config.js", "--env", "${NODE_ENV}"]

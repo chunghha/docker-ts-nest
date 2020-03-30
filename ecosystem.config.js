@@ -17,7 +17,7 @@ module.exports = {
     env_local: {
       NODE_ENV: 'local'
     },
-    env_production: {
+    env_prod: {
       NODE_ENV: 'prod'
     },
     env_qa: {
