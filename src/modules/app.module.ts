@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-
 import { RouterModule } from 'nest-router';
 
 import { EchoModule } from './echo/echo.module';

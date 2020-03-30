@@ -3,7 +3,6 @@ import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AxiosResponse } from 'axios';
 
 import { UpperCasePipe } from '../uppercase.pipe';
-
 import { ExchangeService } from './exchange.service';
 import { Rate } from './rate.model';
 

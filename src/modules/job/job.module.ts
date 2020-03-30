@@ -1,9 +1,8 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common';
-import { BullModule, BullModuleOptions } from '@nestjs/bull';
-
 import { CorsMiddleware } from '@nest-middlewares/cors';
 import { HelmetMiddleware } from '@nest-middlewares/helmet';
 import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
+import { BullModule, BullModuleOptions } from '@nestjs/bull';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { DoneCallback, Job } from 'bull';
 
 import { SharedModule } from '../shared/shared.module';
