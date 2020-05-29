@@ -9,7 +9,7 @@ import { ResponseTimeOptions } from 'response-time';
 	exports: [SharedModule]
 })
 export class SharedModule {
-	public configure() {
+	public configure(): void {
 		HelmetMiddleware.configure(this.getHelmetConfiguration());
 		ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
 	}

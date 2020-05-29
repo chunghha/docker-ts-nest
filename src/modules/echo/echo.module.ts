@@ -11,7 +11,7 @@ import { EchoController } from './echo.controller';
 	imports: [SharedModule]
 })
 export class EchoModule {
-	public configure(consumer: MiddlewareConsumer) {
+	public configure(consumer: MiddlewareConsumer): void {
 		consumer.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware).forRoutes(EchoController);
 	}
 }

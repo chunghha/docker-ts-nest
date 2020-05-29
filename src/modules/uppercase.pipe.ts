@@ -3,7 +3,7 @@ import { ArgumentMetadata, BadRequestException, Injectable, PipeTransform } from
 @Injectable()
 export class UpperCasePipe implements PipeTransform<string> {
 	/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-	public async transform(value: string, metadata: ArgumentMetadata) {
+	public async transform(value: string, metadata: ArgumentMetadata): Promise<string> {
 		if (!value) {
 			return value;
 		}

@@ -16,11 +16,12 @@ export class ExchangeController {
 	@ApiParam({ name: 'from', required: true, type: String })
 	@ApiParam({ name: 'to', required: true, type: String })
 	@Get('/:from/:to')
+	/* eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types */
 	public rate<T>(
 		@Param('from', new UpperCasePipe()) from: string,
 		@Param('to', new UpperCasePipe()) to: string,
 		@Res() response
-	) {
+	): void {
 		const rate: Rate = {
 			from,
 			to

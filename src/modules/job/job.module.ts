@@ -30,7 +30,7 @@ const BullQueueModule = BullModule.registerQueueAsync({
 	imports: [BullQueueModule, SharedModule]
 })
 export class JobModule {
-	public configure(consumer: MiddlewareConsumer) {
+	public configure(consumer: MiddlewareConsumer): void {
 		consumer.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware).forRoutes('job');
 	}
 }

@@ -13,7 +13,7 @@ import { ExchangeService } from './exchange.service';
 	providers: [ExchangeService]
 })
 export class ExchangeModule {
-	public configure(consumer: MiddlewareConsumer) {
+	public configure(consumer: MiddlewareConsumer): void {
 		consumer.apply(CorsMiddleware, HelmetMiddleware, ResponseTimeMiddleware).forRoutes('rate');
 	}
 }
