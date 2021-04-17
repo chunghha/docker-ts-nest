@@ -14,7 +14,7 @@ export class JobController {
 	@ApiResponse({ status: 200, description: 'Successful response' })
 	@Post('/add')
 	/* eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types */
-	public async addJob<T, V>(@Body() value: T): Promise<JobId> {
+	public async addJob<T>(@Body() value: T): Promise<JobId> {
 		const job: Job = await this.queue.add(value);
 		return { id: job.id };
 	}

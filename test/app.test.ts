@@ -19,6 +19,7 @@ describe('App /', () => {
     await app.close();
   });
 
+  /* eslint-disable-next-line radar/no-duplicate-string */
   it('should return 200 OK', () => {
     return app.inject({
       method: 'GET',

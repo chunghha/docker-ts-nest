@@ -16,7 +16,7 @@ export class ExchangeController {
 	@ApiParam({ name: 'from', required: true, type: String })
 	@ApiParam({ name: 'to', required: true, type: String })
 	@Get('/:from/:to')
-	public rate<T>(
+	public rate(
 		@Param('from', new UpperCasePipe()) from: string,
 		@Param('to', new UpperCasePipe()) to: string,
 		/* eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types */
@@ -27,7 +27,7 @@ export class ExchangeController {
 			to
 		};
 
-		this.exchangeService.getRate(from, to).subscribe((res: AxiosResponse<Fixer>) => {
+		this.exchangeService.getRate(from).subscribe((res: AxiosResponse<Fixer>) => {
 			rate.rate = res.data.rates[to] as number;
 
 			response.send(JSON.stringify(rate));

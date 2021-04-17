@@ -14,19 +14,17 @@ export class SharedModule {
 		ResponseTimeMiddleware.configure(this.getResponseTimeOptions());
 	}
 
+	/* eslint-disable radar/no-identical-functions */
 	private getHelmetConfiguration(): IHelmetConfiguration {
-		const helmetConfiguration: IHelmetConfiguration = {
+		return {
 			// default helmet configuration
 		};
-
-		return helmetConfiguration;
 	}
 
 	private getResponseTimeOptions(): ResponseTimeOptions {
-		const responseTimeOptions: ResponseTimeOptions = {
+		return {
 			// default response-time options
 		};
-
-		return responseTimeOptions;
 	}
+	/* eslint-enable radar/no-identical-functions */
 }

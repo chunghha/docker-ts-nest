@@ -8,9 +8,7 @@ export class EchoController {
 	@ApiResponse({ status: 200, description: 'Successful response' })
 	@Get('/:input')
 	public echo(@Param('input') input: string): Message {
-		const message: Message = { echo: input };
-
-		return message;
+		return { echo: input };
 	}
 }
 

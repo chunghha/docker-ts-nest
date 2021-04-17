@@ -6,8 +6,7 @@ import { Observable } from 'rxjs';
 export class ExchangeService {
 	constructor(private readonly httpService: HttpService) {}
 
-	/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-	public getRate<T>(from: string, to: string): Observable<AxiosResponse<T>> {
+	getRate<T>(from: string): Observable<AxiosResponse<T>> {
 		return this.httpService.get(`https://api.exchangeratesapi.io/latest?base=${from}`);
 	}
 }
