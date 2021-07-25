@@ -1,3 +1,4 @@
+import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -6,6 +7,10 @@ import { ApplicationModule } from './modules/app.module';
 
 async function bootstrap() {
 	const app = await NestFactory.create(ApplicationModule, new ExpressAdapter());
+
+	app.enableVersioning({
+		type: VersioningType.URI
+	});
 
 	const options = new DocumentBuilder()
 		.setTitle('Hello example')

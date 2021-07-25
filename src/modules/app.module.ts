@@ -8,7 +8,7 @@ import { routes } from './routes';
 
 @Module({
 	controllers: [RootController],
-  // * retire ExchangeModule because API KEY is now in need.
+	// * retire ExchangeModule because API KEY is now in need.
 	imports: [RouterModule.forRoutes(routes), EchoModule, JobModule]
 })
 export class ApplicationModule {}
