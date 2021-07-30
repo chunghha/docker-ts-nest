@@ -5,9 +5,11 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 
 import { SharedModule } from '../shared/shared.module';
 import { EchoController } from './echo.controller';
+import { EchoV2Controller } from './echo.v2.controller';
 
 @Module({
-	controllers: [EchoController],
+	// * place v2 first
+	controllers: [EchoV2Controller, EchoController],
 	imports: [SharedModule]
 })
 export class EchoModule {

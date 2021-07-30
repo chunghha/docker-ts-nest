@@ -9,7 +9,8 @@ async function bootstrap() {
 	const app = await NestFactory.create(ApplicationModule, new ExpressAdapter());
 
 	app.enableVersioning({
-		type: VersioningType.URI
+		type: VersioningType.HEADER,
+		header: 'version'
 	});
 
 	const options = new DocumentBuilder()
