@@ -3,4 +3,5 @@ node_modules
 dist
 coverage
 documentation
+log
 yarn-error.log
