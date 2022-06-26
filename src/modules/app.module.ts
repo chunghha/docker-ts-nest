@@ -10,8 +10,6 @@ import { registerWinston } from './shared/functions/register-winston';
 @Module({
 	controllers: [RootController],
 	// * retire ExchangeModule because API KEY is now in need.
-	// imports: [RouterModule.forRoutes(routes), EchoModule, JobModule, registerWinston()]
-	// * suppress JobModule to report swagger version issue.
-	imports: [RouterModule.forRoutes(routes), EchoModule, registerWinston()]
+	imports: [RouterModule.forRoutes(routes), EchoModule, JobModule, registerWinston()]
 })
 export class ApplicationModule {}
