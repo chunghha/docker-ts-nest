@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { RouterModule } from 'nest-router';
+import { RouterModule } from '@nestjs/core';
 
 import { EchoModule } from './echo/echo.module';
 import { JobModule } from './job/job.module';
@@ -10,6 +10,6 @@ import { registerWinston } from './shared/functions/register-winston';
 @Module({
 	controllers: [RootController],
 	// * retire ExchangeModule because API KEY is now in need.
-	imports: [RouterModule.forRoutes(routes), EchoModule, JobModule, registerWinston()]
+	imports: [RouterModule.register(routes), EchoModule, JobModule, registerWinston()]
 })
 export class ApplicationModule {}

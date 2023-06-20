@@ -1,7 +1,6 @@
 import { HelmetMiddleware } from '@nest-middlewares/helmet';
 import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
 import { Module } from '@nestjs/common';
-import { IHelmetConfiguration } from 'helmet';
 import { ResponseTimeOptions } from 'response-time';
 
 @Module({
@@ -15,7 +14,7 @@ export class SharedModule {
 	}
 
 	/* eslint-disable radar/no-identical-functions */
-	private getHelmetConfiguration(): IHelmetConfiguration {
+	private getHelmetConfiguration() {
 		return {
 			// default helmet configuration
 		};

@@ -1,4 +1,4 @@
-import { Routes } from 'nest-router';
+import { Routes } from '@nestjs/core';
 
 import { EchoModule } from './echo/echo.module';
 import { ExchangeModule } from './exchange/exchange.module';

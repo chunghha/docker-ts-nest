@@ -1,4 +1,4 @@
-import { RouterModule } from 'nest-router';
+import { RouterModule } from '@nestjs/core';
 import { Test } from '@nestjs/testing';
 import request, { SuperTest, Test as AppTest }  from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -15,7 +15,7 @@ describe('Echo Module', () => {
 
   beforeAll(async () => {
     const module = await Test.createTestingModule({
-      imports: [ RouterModule.forRoutes(routes), EchoModule, registerWinston()],
+      imports: [ RouterModule.register(routes), EchoModule, registerWinston()],
     })
       .compile();
 

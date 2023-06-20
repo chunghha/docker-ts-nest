@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: 'docker-ts-nest',
-    script: './dist/server.js',
+    script: './dist/main.js',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
     instances: 1,
